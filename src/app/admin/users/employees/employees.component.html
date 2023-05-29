@@ -1,0 +1,92 @@
+<div style="text-align:center;padding:0">
+    <h2 style="padding:0;margin:0.5rem"> Employees </h2>
+</div>
+<p-button label="Add" icon="pi pi-plus" styleClass="p-button-sm" (click)="visible=true"></p-button><br /><br />
+<p-table *ngIf='users.length>0' [value]="users">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="id">Id
+            </th>
+            <th pSortableColumn="name">Name
+            </th>
+            <th pSortableColumn="contact">Contact
+            </th>
+            <th pSortableColumn="city">City
+            </th>
+            <th pSortableColumn="message">Message
+            </th>
+            <th pSortableColumn="loginId">L.ID.
+            </th>
+            <th pSortableColumn="roleName">Role
+            </th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.contact}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.message}}</td>
+            <td>{{user.loginId}}</td>
+            <td>{{user.roleName}}</td>
+
+        </tr>
+    </ng-template>
+</p-table>
+
+
+<p-dialog header="Add Employee" [(visible)]="visible" [style]="isMobile?{width: '100%'}:{width: '70%'}">
+
+    <table style="width:100%">
+        <tr>
+
+            <td>
+                <label for="name" class="block text-900 font-medium mb-2">Name</label>
+                <input id="name" [(ngModel)]="name" type="text" placeholder="Name" pInputText class="w-full mb-3">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="contact" class="block text-900 font-medium mb-2">Contact</label>
+                <input id="contact" type="text" [(ngModel)]="contact" placeholder="Contact" pInputText
+                    class="w-full mb-3">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email" class="block text-900 font-medium mb-2">Email</label>
+                <input id="email" type="text" [(ngModel)]="email" placeholder="Email" pInputText class="w-full mb-3">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="city" class="block text-900 font-medium mb-2">City</label>
+                <input id="city" type="text" [(ngModel)]="city" placeholder="City" pInputText class="w-full mb-3">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="message" class="block text-900 font-medium mb-2">Message</label>
+                <input id="message" type="text" [(ngModel)]="message" placeholder="Message" pInputText
+                    class="w-full mb-3">
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button pButton pRipple label="Add" (click)="addEmployee()" icon="pi pi-user" class="w-full"></button>
+
+            </td>
+        </tr>
+    </table>
+
+</p-dialog>
+
+

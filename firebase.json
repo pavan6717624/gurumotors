@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/gurumotors",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
