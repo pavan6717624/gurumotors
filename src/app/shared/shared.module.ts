@@ -33,11 +33,15 @@ import {FieldsetModule} from 'primeng/fieldset';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { MessageService } from 'primeng/api';
 import { DataViewModule } from 'primeng/dataview';
+import { HomeComponent } from './home/home.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { SelectButtonModule } from 'primeng/selectbutton';
 const SHARED_MODULES = [
   BlockUIModule,
+  SelectButtonModule,
   BadgeModule,
   DataViewModule,
-
+  RadioButtonModule,
   SplitButtonModule,
   AvatarGroupModule,
   MessageModule,
@@ -73,7 +77,9 @@ const SHARED_MODULES = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     

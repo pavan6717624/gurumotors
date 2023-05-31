@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit {
     this.waitStatus = true;
     this.loginService.login(formData).subscribe(
 
-      (res) => {
-        if (res) {
+      (res:any) => {
+        if (res.loginStatus) {
           this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login Successful' });
-          this.router.navigate(['admin']);
+          this.router.navigate([(res.userType+'').toLowerCase()]);
         }
         else {
           this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Login Failed. Try Again...' });
