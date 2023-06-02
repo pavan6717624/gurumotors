@@ -1,5 +1,5 @@
 <div class="card flex justify-content-center gap-2">
-    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-3" style="margin:0 auto;">
+    <div class="surface-card shadow-2 border-round w-full lg:w-3" style="margin:0 auto; padding-left:1rem; padding-right:1rem">
         <div class="text-center" style="padding:0;margin:0">
 
             <div class="text-900 text-3xl font-medium mb-3"  style="padding:0;margin:0">Attendance</div>
@@ -7,32 +7,29 @@
 
         </div>
         <div>
-            <label for="date" class="block text-900 font-medium mb-2">Select Date</label>
-            <p-calendar id="date" [showIcon]="true" dateFormat="dd/mm/yy" style='width:100%' class="w-full mb-3">
+            <label for="date" class="block text-900 font-medium mb-2">Date</label>
+            <p-calendar id="date" [maxDate]="currDate" [showIcon]="true" [(ngModel)]="date" dateFormat="dd/mm/yy" style='width:100%' class="w-full mb-3">
             </p-calendar>
 
             <br /><br />
-            <label for="day" class="block text-900 font-medium mb-2">Day</label>
-            <p-selectButton id="day" [options]="stateOptions" optionLabel="label" optionValue="value"></p-selectButton>
-
-            <br />
+            
 
             <label class="block text-900 font-medium mb-2">Attendance</label>
             <div class="flex flex-wrap gap-3">
                 <div class="flex align-items-center">
-                    <p-radioButton name="attendance" value="Present" [(ngModel)]="attendance" inputId="attendance1">
+                    <p-radioButton name="attendance" value="Present" [(ngModel)]="attendance" (ngModelChange)="attCheck()" inputId="attendance1">
                     </p-radioButton>
                     <label for="attendance1" class="ml-2">Present</label>
                 </div>
 
                 <div class="flex align-items-center">
-                    <p-radioButton name="attendance1" value="Absent" [(ngModel)]="attendance" inputId="attendance2">
+                    <p-radioButton name="attendance1" value="Absent" [(ngModel)]="attendance" (ngModelChange)="attCheck()" inputId="attendance2">
                     </p-radioButton>
                     <label for="attendance2" class="ml-2">Absent</label>
                 </div>
 
                 <div class="flex align-items-center">
-                    <p-radioButton name="attendance1" value="Off" [(ngModel)]="attendance" inputId="attendance3">
+                    <p-radioButton name="attendance1" value="Off" [(ngModel)]="attendance" (ngModelChange)="attCheck()" inputId="attendance3">
                     </p-radioButton>
                     <label for="attendance3" class="ml-2">Off</label>
                 </div>
@@ -42,15 +39,30 @@
 
             <br />
 
+            <label for="day" class="block text-900 font-medium mb-2">Day</label>
+            <p-selectButton id="day" [disabled]="attendance!='Present'" [(ngModel)]="day" [options]="stateOptions" optionLabel="label" optionValue="value"></p-selectButton>
 
-            <label for="punchTime" class="block text-900 font-medium mb-2">Punch in Time</label>
-            <p-calendar id="punchTime" [timeOnly]="true" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
+            <br />
+
+
+            <label for="punchInTime" class="block text-900 font-medium mb-2">Punch in Time</label>
+            <p-calendar id="punchInTime" [(ngModel)]="punchInTime" [timeOnly]="true" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
+            </p-calendar>
+            <br /><br />
+
+            <label for="punchOutTime" class="block text-900 font-medium mb-2">Punch Out Time</label>
+            <p-calendar id="punchOutTime" [(ngModel)]="punchOutTime" [timeOnly]="true" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
             </p-calendar>
             <br /><br />
 
 
-            <label for="logoutTime" class="block text-900 font-medium mb-2">Log Out Time</label>
-            <p-calendar id="logoutTime" [timeOnly]="true" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
+            <label for="LunchInTime" class="block text-900 font-medium mb-2">Lunch In Time</label>
+            <p-calendar id="LunchInTime" [timeOnly]="true" [(ngModel)]="lunchInTime" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
+            </p-calendar> 
+            <br /><br />
+
+            <label for="LunchOutTime" class="block text-900 font-medium mb-2">Lunch Out Time</label>
+            <p-calendar id="LunchOutTime" [timeOnly]="true" [(ngModel)]="lunchOutTime" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
             </p-calendar>
             <br /><br />
             <button pButton pRipple  label="Submit"  class="w-full"></button>

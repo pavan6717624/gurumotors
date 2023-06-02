@@ -1,6 +1,7 @@
 <div class="sticky" style="vertical-align:center">
+   
     <p-menubar [model]="menuItems"
-        [style]="{'background-color':'white', 'width': '100%' , 'height':'5em','border-width':0,'padding-top':'1em','border-radius':0,'vertical-align':'middle'}">
+        [style]="{'padding':'0','background-color':'white', 'width': '100%' , 'height':'4em','border-width':0,'border-radius':0,'vertical-align':'middle'}">
 
         <ng-template [pTemplate]="isMobile?'end':'start'">
             <img (click)='toHome()' style='cursor:pointer' src="assets/images/logo.jpg" height="50" class="mr-2">
@@ -8,6 +9,9 @@
         </ng-template>
 
     </p-menubar>
+
+    <div style="padding:0.1rem;background-color:#2563eb;color:white;width: 100% ;border-width:0;border-radius:0;vertical-align:middle">
+       <b> &nbsp;Hi Pavankumar! </b></div>
 
 </div>
 
