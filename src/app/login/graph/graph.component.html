@@ -1,0 +1,21 @@
+
+ <div style='margin:auto; padding: 0;display: flex;justify-content: center;align-items: center; width:100%; height:100%'>
+
+
+<div style="height:500px;width:500px;">
+      <canvas  id="MyChart" >{{ chart }}</canvas>
+</div>
+
+</div>
+<div>&nbsp;</div>
+<div style='margin:auto; padding: 0;display: flex;justify-content: center;align-items: center; width:100%; height:100%'>
+
+<div class="form-group">
+ <button class="login-btn" (click)="next()" type="submit">{{exam==='YES'?'Goto Session Video':'Join the Course'}}</button>
+ </div>
+
+ <div style='padding-left:5px' class="form-group" *ngIf="exam!='YES'">
+ <button class="login-btn" (click)="home()" type="submit">Home</button>
+ </div>
+
+ </div>

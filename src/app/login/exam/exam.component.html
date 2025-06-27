@@ -1,0 +1,41 @@
+<body class="flex justify-center">
+  <div class="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">Personality Test</h1>
+     
+    </div>
+
+    <!-- Question Section -->
+    <div id="question-container" class="mb-6">
+      <h2 class="text-lg font-medium text-gray-700 mb-4" id="question-text">
+       {{currquestion+1}}. {{questions[currquestion].question}}
+      </h2>
+      <div class="space-y-3">
+        <label class="flex items-center space-x-3">
+          <input type="radio" name="answer{{currquestion}}" [(ngModel)]="questions[currquestion].answer" value="A" class="accent-blue-600" />
+          <span class="text-gray-600">A. {{questions[currquestion].options[0].text}}</span>
+        </label>
+        <label class="flex items-center space-x-3">
+          <input type="radio" name="answer{{currquestion}}" [(ngModel)]="questions[currquestion].answer" value="B" class="accent-blue-600" />
+          <span class="text-gray-600">B. {{questions[currquestion].options[1].text}}</span>
+        </label>
+        <label class="flex items-center space-x-3">
+          <input type="radio" name="answer{{currquestion}}" [(ngModel)]="questions[currquestion].answer" value="C" class="accent-blue-600" />
+          <span class="text-gray-600">C. {{questions[currquestion].options[2].text}}</span>
+        </label>
+        <label class="flex items-center space-x-3">
+          <input type="radio" name="answer{{currquestion}}" [(ngModel)]="questions[currquestion].answer" value="D" class="accent-blue-600" />
+          <span class="text-gray-600">D. {{questions[currquestion].options[3].text}}</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex justify-between">
+      <button class="{{currquestion==0?'bg-gray-200 text-gray-600 hover:bg-gray-300':'bg-blue-600 text-white hover:bg-blue-700'}} px-4 py-2 rounded-xl " id="prev-btn"  (click)="currquestion>0?currquestion=currquestion-1:currquestion">Previous</button>
+      <button class="{{currquestion!=9?'bg-blue-600 hover:bg-blue-700':'bg-green-600 hover:bg-green-700'}} text-white px-6 py-2 rounded-xl" id="next-btn" (click)="submit()">{{currquestion==9?'Submit':'&nbsp;&nbsp;Next&nbsp;&nbsp;'}}</button>
+    </div>
+
+   
+  </div>

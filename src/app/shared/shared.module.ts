@@ -36,8 +36,10 @@ import { DataViewModule } from 'primeng/dataview';
 import { HomeComponent } from './home/home.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ScrollTopModule } from 'primeng/scrolltop';
 const SHARED_MODULES = [
   BlockUIModule,
+  ScrollTopModule,
   SelectButtonModule,
   BadgeModule,
   DataViewModule,

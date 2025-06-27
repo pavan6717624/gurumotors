@@ -2,7 +2,7 @@
     <div class="surface-card shadow-2 border-round w-full lg:w-3" style="margin:0 auto; padding-left:1rem; padding-right:1rem">
         <div class="text-center" style="padding:0;margin:0">
 
-            <div class="text-900 text-3xl font-medium mb-3"  style="padding:0;margin:0">Attendance</div>
+            <div class="text-900 text-3xl font-medium mb-3"  style="padding-top:0.5rem;margin:0">Attendance</div>
 
 
         </div>
@@ -65,8 +65,11 @@
             <p-calendar id="LunchOutTime" [timeOnly]="true" [(ngModel)]="lunchOutTime" icon='pi pi-clock' [showIcon]="true" dateFormat="dd/mm/yy">
             </p-calendar>
             <br /><br />
-            <button pButton pRipple  label="Submit"  class="w-full"></button>
+            <button pButton pRipple  label="Submit"  class="w-full" (click)="submitAttendance()"></button>
 
         </div>
     </div>
 </div>
+
+<p-toast></p-toast>
+<p-scrollTop></p-scrollTop>

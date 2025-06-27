@@ -10,9 +10,9 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
   getEmployees() {
-    return this.http.get('https://takeoff-pavan.herokuapp.com/GMAPI/getEmployees');  
+    return this.http.get('http://localhost:8081/GMAPI/getEmployees');  
   }
   addEmployee(user: User) {
-    return this.http.post('https://takeoff-pavan.herokuapp.com/GMAPI/addEmployee',user);  
+    return this.http.post('http://localhost:8081/GMAPI/addEmployee',user);  
   }
 }

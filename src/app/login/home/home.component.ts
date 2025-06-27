@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
   }
+  click()
+  {
+    this.router.navigate(['start']);
+  }
 
 
   login() {
@@ -39,6 +43,9 @@ export class HomeComponent implements OnInit {
       (res:any) => {
         if (res.loginStatus) {
           this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login Successful' });
+          let tokenStr= 'Bearer '+res.jwt;
+          localStorage.setItem('token', tokenStr);
+  
           this.router.navigate([(res.userType+'').toLowerCase()]);
         }
         else {
